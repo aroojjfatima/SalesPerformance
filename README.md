@@ -34,7 +34,6 @@ This project is a Flask-based web application that integrates with a Large Langu
 ## Setup Instructions
 
 ### 1. Clone the repository
-```bash
 git clone https://github.com/your-username/SalesPerformanceApp.git
 cd SalesPerformanceApp
 
