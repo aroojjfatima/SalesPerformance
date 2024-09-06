@@ -38,13 +38,13 @@ git clone https://github.com/your-username/SalesPerformanceApp.git
 cd SalesPerformanceApp
 
 ### 2. Create and activate a virtual environment
-# Create a virtual environment
+ Create a virtual environment
 python -m venv venv
 
-# Activate the virtual environment
-# On Windows:
+ Activate the virtual environment
+ On Windows:
 venv\\Scripts\\activate
-# On MacOS/Linux:
+ On MacOS/Linux:
 source venv/bin/activate
 
 ### 3. Install Dependencies
