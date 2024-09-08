@@ -1,13 +1,12 @@
 import openai
 import os
-from openai import OpenAI, OpenAIError, RateLimitError
+from openai import OpenAI, OpenAIError
 from dotenv import load_dotenv
-import time
 
 # Load environment variables from the .env file
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # Ensure your API key is correctly loaded
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY")) 
 
 def process_insights(insights):
     # Simplify and focus on actionable feedback
@@ -23,8 +22,7 @@ def format_insights(insights):
     return formatted
 
 def generate_gpt_insights(sales_data):
-    # Limit the size of the input to avoid context length issues
-    sales_data_limited = sales_data.head(50)  # Adjust as needed
+    sales_data_limited = sales_data.head(50)  
     
     # Construct the prompt with limited data
     prompt = f"""
@@ -39,7 +37,7 @@ def generate_gpt_insights(sales_data):
     """
     try:
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",  # Or use gpt-4 if available
+            model="gpt-3.5-turbo", 
             messages=[
                 {"role": "system", "content": "You are an expert in analyzing sales data."},
                 {"role": "user", "content": prompt}
